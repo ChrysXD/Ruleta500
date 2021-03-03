@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="js/sweetalert2.js"></script>
+    <script src="js/nuevo.js"></script>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	<meta name="description" content="Ruleta Spin500">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	
+    	<!--   icono de la pagina            -->
+    	<link rel="shortcut icon" href="img/ruleta.ico">  
+        <title>Spin500</title>
+    	
+    	
+    	
+    	
+
+        <link rel="stylesheet" type="text/css" href="css/sweetalert2.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+
+
+
+
+
+
+
+
+
+    <!-- <img src="verde.jpg" id="fullscreen"</>      COLOCAR LA IMAGEN DE FONDO si se desea  -->
+        <div class="contenedor" id="swal"> 
+            <div id="chart" class="contenedor"></div>
+            <div id="alerta"></div>
+        </div>    
+        
+    	<!--   lugar donde muestro los resultados    -->
+    	
+        <div id="question"> 
+    	       <div class="seleccion">
+        <input type="button" class="button" value="Inicio" onclick="spin(); girar();">
+        <h1 id="conteo" class="conteo"></h1>
+        <div class="contenedor2">
+          <form action="">
+            <div class="selectbox">
+              <div class="select" id="select">
+                <div class="contenido-select">
+                  <h1 class="titulo">Selecciona la casilla</h1>
+                  <p class="descripcion">Debes de seleccionar la casilla</p>
+                </div>
+                <i class="fas fa-angle-down"></i>
+              </div>
+
+              <div class="opciones" id="opciones">
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion1();">
+                    <img src="img/amarillo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Amarillo</h1>
+                      <p class="descripcion">Casilla 1</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion2();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 2</p>
+                    </div>
+                  </div>
+                  <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion3();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 3</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion4();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 4</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion5();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 5</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion6();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 6</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion7();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 7</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion8();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 8</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion9();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 9</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion10();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 10</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion11();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 11</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion12();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 12</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion13();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 13</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion14();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 14</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion15();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 15</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion16();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 16</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion17();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 17</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion18();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 18</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion19();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 19</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion20();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 20</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion21();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 21</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion22();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 22</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion23();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 23</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion24();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 24</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion25();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 25</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion26();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 26</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion27();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 27</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion28();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 28</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion29();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 29</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion30();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 30</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion31();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 31</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion32();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 32</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion33();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 33</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion34();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 34</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion35();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 35</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion36();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 36</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion37();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 37</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion38();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 38</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion39();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 39</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion40();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 40</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion41();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 41</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion42();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 42</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion43();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 43</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion44();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 44</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion45();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 45</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion46();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 46</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion47();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 47</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion48();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 48</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion49();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 49</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion50();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 50</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion51();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 51</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion52();">
+                    <img src="img/rojo.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Rojo</h1>
+                      <p class="descripcion">Casilla 52</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion53();">
+                    <img src="img/gris.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Gris</h1>
+                      <p class="descripcion">Casilla 53</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="opcion">
+                  <div class="contenido-opcion" onclick="Funcion54();">
+                    <img src="img/azul.png" alt="">
+                    <div class="textos">
+                      <h1 class="titulo">Azul</h1>
+                      <p class="descripcion">Casilla 54</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+      <input type="hidden" name="pais" id="inputSelect" value="">
+    </form>
+
+  </div>
+        </div>
+</div>
+        <div id="sonido">
+
+      <iframe src="audio/girar.mp3" id="audio" style="display: none;"></iframe>
+
+    </div>
+    	
+    
+
+    	 
+    
+
+        
+    	
+    	 
+    	 
+    	 
+        <script type="text/javascript" src="js/script.js" > </script>
+    	
+    </body>
+    <script src="js/main.js"></script>
+    <script src="js/cargar.js"></script>
+</html>
